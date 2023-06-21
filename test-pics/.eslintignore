@@ -1,0 +1,12 @@
+.eslintrc.cjs
+
+*._legacy*
+_legacy*
+
+*._backup*
+_backup*
+
+*._temp*
+_temp*
+
+.vscode
