@@ -1,0 +1,28 @@
+.form {
+	width: var(--width-card-a1);
+	height: calc(var(--width-card-a1) / 3);
+	position: relative;
+}
+
+.area {
+	width: var(--width-card-a1);
+	height: calc(var(--width-card-a1) / 3);
+}
+
+.btn {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 70px;
+	height: 35px;
+	z-index: 10;
+	transform: translate(50%, 50%);
+	background-color: var(--color-orange-a1);
+	border: none;
+	box-shadow: 4px 4px 8px 0px var(--color-blue-a1);
+	@media (max-width: 600px) {
+		width: 50px;
+		height: 25px;
+		font-size: 12px;
+	}
+}
