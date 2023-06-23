@@ -5,6 +5,7 @@ import { Layout } from '../../components/Layout';
 import { Preloader } from '../../components/Preloader';
 import type { CommentType } from '../../interfaces/interfaces';
 import styles from './MainPage.module.scss';
+import { baseUrl } from '../../components/consts';
 
 export function MainPage() {
 	const [comments, setComments] = useState<CommentType[]>();
@@ -12,7 +13,6 @@ export function MainPage() {
 	const [isError, setIsError] = useState(false);
 
 	async function fetchComments() {
-		const baseUrl = import.meta.env.VITE_BASE_URL;
 		try {
 			const data = await fetch(`${baseUrl}?limit=4`);
 			const res = await data.json();
@@ -25,7 +25,6 @@ export function MainPage() {
 	}
 
 	async function deleteComment(id: number) {
-		const baseUrl = import.meta.env.VITE_BASE_URL;
 		setIsLoading(true);
 		try {
 			await fetch(`${baseUrl}${id}`, {

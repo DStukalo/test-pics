@@ -4,6 +4,7 @@ import { getValueFromStorage } from '../../helpers/getValueFromStorage';
 import styles from './FormAddComment.module.scss';
 import { setValueToStorage } from '../../helpers/setValueToStorage';
 import type { CommentType } from '../../interfaces/interfaces';
+import { baseUrl } from '../consts';
 
 interface Props {
 	comments: CommentType[];
@@ -31,7 +32,6 @@ export function FormAddComment({
 	};
 
 	async function createNewComment() {
-		const baseUrl = import.meta.env.VITE_BASE_URL;
 		const text = textareaValue;
 		setValueToStorage('textareaValue', '');
 		setLoading(true);
